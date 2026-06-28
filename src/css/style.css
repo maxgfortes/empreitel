@@ -210,7 +210,7 @@ body {
   position: absolute;
   inset: 0;
   background:
-    url('./src/img/homebg.jpg') center/cover no-repeat;
+    url('../img/homebg.jpg') center/cover no-repeat;
   transform: scale(1.05);
   animation: hero-pan 20s ease-in-out infinite alternate;
 }
