@@ -1,17 +1,7 @@
-/* =============================================
-   EMPREITEL — main.js
-   - Sticky nav
-   - Mobile menu
-   - Scroll reveal
-   - Animated counters
-   - Active nav highlight
-   - Form feedback
-============================================= */
 
 (function () {
   'use strict';
 
-  // ─── NAVBAR ─────────────────────────────────
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navLinksEl = document.getElementById('nav-links');
@@ -32,7 +22,6 @@
     navLinksEl.classList.toggle('open');
   });
 
-  // Close mobile menu when a link is clicked
   navLinksEl.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       hamburger.classList.remove('open');
@@ -40,7 +29,6 @@
     });
   });
 
-  // ─── ACTIVE NAV HIGHLIGHT ON SCROLL ─────────
   const sections = document.querySelectorAll('section[id], footer[id]');
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
 
@@ -61,10 +49,8 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
   highlightNav();
 
-  // ─── SCROLL REVEAL ───────────────────────────
   const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
-  // Don't animate hero elements via IntersectionObserver (they use CSS animation)
   const nonHeroReveals = Array.from(revealEls).filter(
     el => !el.closest('.hero')
   );
@@ -83,7 +69,6 @@
 
   nonHeroReveals.forEach(el => revealObserver.observe(el));
 
-  // ─── ANIMATED COUNTERS ───────────────────────
   const statNums = document.querySelectorAll('.stat-num[data-target]');
   let countersStarted = false;
 
@@ -121,7 +106,6 @@
     statsObserver.observe(statsSection);
   }
 
-  // ─── PARALLAX HERO BG (subtle) ──────────────
   const heroBg = document.querySelector('.hero-bg');
   if (heroBg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     window.addEventListener('scroll', () => {
@@ -132,7 +116,6 @@
     }, { passive: true });
   }
 
-  // ─── SMOOTH ANCHOR SCROLL ───────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const target = document.querySelector(this.getAttribute('href'));
@@ -143,7 +126,6 @@
     });
   });
 
-  // ─── CARD TILT (subtle) ─────────────────────
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('mousemove', function (e) {
       const rect = this.getBoundingClientRect();

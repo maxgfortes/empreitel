@@ -1,14 +1,3 @@
-/* =============================================
-   EMPREITEL — Redesign CSS
-   Palette:
-   --gold: #C9A84C
-   --navy: #0D1117
-   --navy-mid: #1C2B3A
-   --teal: #2E4A3E
-   --cream: #E8E4DC
-   --text-muted: #8A9BAE
-============================================= */
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -42,13 +31,10 @@ body {
   line-height: 1.6;
   transition: background var(--transition), color var(--transition);
 }
-
-/* ---- SCROLLBAR ---- */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--navy); }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
 
-/* ===================== NAV ===================== */
 #navbar {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -155,7 +141,6 @@ body {
 .nav-cta:hover { background: var(--gold-light) !important; color: var(--navy) !important; }
 .nav-cta::after { display: none !important; }
 
-/* hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -196,7 +181,6 @@ body {
   .nav-link { font-size: 1rem; padding: 0.75rem 1rem; }
 }
 
-/* ===================== HERO ===================== */
 .hero {
   position: relative;
   height: 100vh;
@@ -307,7 +291,9 @@ body {
   50% { transform: translateX(-50%) translateY(6px); }
 }
 
-/* ===================== BUTTONS ===================== */
+
+
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -355,14 +341,12 @@ body {
 
 .mt-2 { margin-top: 2rem; }
 
-/* ===================== CONTAINER ===================== */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
 }
 
-/* ===================== SECTION HEADERS ===================== */
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -394,7 +378,6 @@ body {
   border-radius: 2px;
 }
 
-/* ===================== PORQUE ===================== */
 .section-porque {
   padding: 7rem 0;
   background: var(--bg-porque);
@@ -468,7 +451,6 @@ body {
   line-height: 1.7;
 }
 
-/* ===================== QUEM SOMOS ===================== */
 .section-quem {
   padding: 7rem 0;
   background: var(--navy);
@@ -547,7 +529,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* ===================== RESULTADOS ===================== */
 .section-resultados {
   position: relative;
   background: var(--navy-mid);
@@ -633,7 +614,6 @@ body {
   background: rgba(192,192,200,0.2);
 }
 
-/* ===================== TRABALHOS ===================== */
 .section-trabalhos {
   padding: 7rem 0;
   background: var(--bg-trabalhos);
@@ -698,7 +678,6 @@ body {
   text-transform: uppercase;
 }
 
-/* Concrete texture pattern overlay on cards */
 .trabalho-img::after {
   content: '';
   position: absolute;
@@ -720,7 +699,6 @@ body {
     );
 }
 
-/* ===================== CONTATO ===================== */
 .section-contato {
   padding: 7rem 0;
   background: var(--bg-porque);
@@ -800,7 +778,6 @@ body {
   letter-spacing: 0.06em;
 }
 
-/* Form */
 .contato-form {
   display: flex;
   flex-direction: column;
@@ -866,7 +843,6 @@ body {
   line-height: 1.6;
 }
 
-/* ===================== FOOTER ===================== */
 .footer {
   background: var(--navy);
   border-top: 1px solid rgba(192,192,200,0.1);
@@ -904,6 +880,12 @@ body {
   letter-spacing: 0.08em;
 }
 
+.footer-copy a {
+  color: rgba(138,155,174,0.5);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
 .back-to-top {
   position: absolute;
   bottom: 2rem;
@@ -923,7 +905,6 @@ body {
 .back-to-top:hover { background: var(--gold); color: var(--navy); transform: translateY(-3px); }
 .back-to-top svg { width: 18px; height: 18px; }
 
-/* ===================== ANIMATIONS ===================== */
 .reveal-up {
   opacity: 0;
   transform: translateY(30px);
@@ -966,7 +947,6 @@ body {
   to   { opacity: 1; transform: none; }
 }
 
-/* ===================== REDUCED MOTION ===================== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
